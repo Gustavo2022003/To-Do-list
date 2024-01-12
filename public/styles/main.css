@@ -1,0 +1,127 @@
+body {
+    background: rgb(129, 129, 217);
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+    padding-top: 2rem;
+    background: white;
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+.postTextArea {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+#container-footer {
+    background-color: rgb(54, 54, 129);
+    color: white;
+}
+
+.textArea {
+    padding: 10px;
+    border-radius: 10px;
+    resize: none;
+    border: 1px solid rgb(210, 210, 210);
+    width: 60vw;
+    display: inline-block;
+}
+
+.textArea:focus{
+    outline: none !important;
+    border: 1px solid rgb(145, 145, 145);
+}
+
+.textInput {
+    padding: 10px;
+    border-radius: 10px;
+    width: 30vw;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.textInput:focus {
+    outline: none !important;
+    border: 1px solid rgb(145, 145, 145);
+}
+
+.postBtn {
+    font-size: 1em;
+    outline: none;
+    background-color: rgb(129, 129, 217);
+    border: none;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+    position: absolute;
+    right: 0px;
+    color: white;
+}
+
+.postBtnDiv {
+    margin: auto;
+    width: 60vw;
+    position: relative;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.postContainer {
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+    margin: auto;
+    width: 60vw;
+    padding: 20px 20px;
+    margin-bottom: 40px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.noteTitle {
+    color: rgb(129, 129, 217);
+    display: inline-block;
+}
+
+.noteTitleDiv {
+    width: 300px;
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.DelBtn {
+    background-color: rgb(208, 77, 77);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 70px;
+    top: 10px;
+}
+
+.editBtn {
+    background-color: rgb(77, 136, 208);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .postBtn {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,12 @@
+<div class="container-fluid postContainer">
+    <div class="noteTitleDiv">
+        <p class="noteTitle"><%= post.title %></p>
+    </div>
+    
+    <p><%= post.message %></p>
+    <form action="/deletePost" method="post">
+        <input type="hidden" name="postID" value="<%= post.ID %>">
+        <button type="submit" class="DelBtn">Delete</button>
+    </form>
+    <a href="/editPost/<%= post.ID %>" class="editBtn">Edit</a>
+</div>
