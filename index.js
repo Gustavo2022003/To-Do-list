@@ -1,22 +1,29 @@
+// Importações
 import express from "express";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 
+// Definindo variáveis
 const PORT = 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 
+// Configurando o servidor
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Middlewares
 function checkPostExistence(req, res, next) {
+    // Armazena o ID do post dentro de postId
     const postId = parseInt(req.params.id);
+    
+    // Irá encontrar a primeiro post que tenha o ID igual ao postId
     const post = posts.find(post => post.ID === postId);
 
-    // Verifica se o post existe
+    // Se post for nulo...
     if (!post) {
         console.error(`Post com ID ${postId} não encontrado.`);
         return res.redirect("/");
@@ -28,20 +35,26 @@ function checkPostExistence(req, res, next) {
     next();
 }
 
+// Definindo variáveis
 let IDs = 0;
-
 let posts = [];
 
+
+// Rotas HTTP
+
 app.get("/", (req, res) => {
-    const data = {
+
+    // Renderiza a página index.ejs enviando um formulário com o ano e o array de posts
+    res.render("index.ejs", {
         year: new Date().getFullYear(),
         posts: posts
-    };
+    });
 
-    res.render("index.ejs", data);
 });
 
 app.post("/submit", (req, res) => {
+
+    // Definindo as variáveis
     const message = req.body["textArea"];
     const title = req.body["title"];
     const ID = posts.length + 1;
@@ -62,8 +75,11 @@ app.post("/submit", (req, res) => {
 });
 
 app.post("/deletePost", (req, res) => {
+
+    // Definindo as variáveis
     var postID = req.body["postID"];
 
+    // Se o postID não for um número
     if (isNaN(postID)) {
         console.log("ID inválido.");
         return res.redirect("/");
